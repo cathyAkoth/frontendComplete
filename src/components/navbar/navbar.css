@@ -1,0 +1,227 @@
+.mkz__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-family: var(--font-family);
+
+  padding: 2rem 6rem;
+  height: 70px;
+}
+
+.mkz__navbar.active {
+  background: #031b34;
+}
+
+.mkz__navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar-links_logo {
+  margin-right: 2rem;
+  font-size: 28px;
+  margin-left: 20px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mkz__navbar-links_logo img {
+  width: 62.56px;
+  height: 16.02px;
+}
+
+.mkz__navbar-links_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.mkz__navbar-sign {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mkz__navbar-links_container p,
+.mkz__navbar-sign p,
+.mkz__navbar-menu_container p {
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 25px;
+  text-transform: capitalize;
+
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.mkz__navbar-links p:hover,
+.mkz__navbar-sign p:hover,
+.mkz__navbar-menu p:hover {
+  color: rgb(206, 194, 194);
+}
+
+.mkz__navbar-sign button,
+.mkz__navbar-menu_container button {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: #ff4820;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.mkz__navbar-sign button:hover {
+  /* padding: 0.3rem 0.8rem; */
+  transition: all 0.3s ease-out;
+  /* background-color: transparent; */
+  background: #69200f;
+  color: #fff;
+  border-radius: 4px;
+  /* border: 1px solid var(--color-bg); */
+}
+
+.mkz__navbar-menu {
+  margin-left: 1rem;
+
+  display: none;
+  position: relative;
+}
+
+.mkz__navbar-menu svg {
+  cursor: pointer;
+}
+
+.mkz__navbar-menu_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+
+  text-align: end;
+  background: var(--color-footer);
+  padding: 2rem;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  margin-top: 1rem;
+  min-width: 210px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mkz__navbar-menu_container p {
+  margin: 1rem 0;
+}
+
+.mkz__navbar-menu_container-links-sign {
+  display: none;
+}
+
+.navbarIconContainer {
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.navIconBadge {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.navAvatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+  .mkz__navbar-links_container {
+    display: none;
+  }
+
+  .mkz__navbar-menu {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mkz__navbar {
+    padding: 2rem 4rem;
+    margin-left: -50px;
+    height: 70px;
+  }
+
+  .navbar-links_logo {
+    font-size: 24px !important;
+  }
+
+  .mkz__navbar-links_container p,
+  .mkz__navbar-sign p,
+  .mkz__navbar-menu_container p {
+    font-size: 14px !important;
+    /* margin: 0 2rem !important; */
+  }
+
+  .mkz__navbar-menu_container {
+    padding: 1rem !important;
+    min-width: 160px !important;
+    margin-right: -20px;
+  }
+
+  .mkz__navbar-menu_container p {
+    font-size: 12px !important;
+    margin: 0.2rem 0 !important;
+  }
+
+  .mkz__navbar-menu svg {
+    margin-right: -20px;
+  }
+
+  .mkz__navbar-sign button,
+  .mkz__navbar-menu_container button {
+    padding: 0.2rem 0.5rem !important;
+    font-weight: 500;
+    font-size: 14px !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .mkz__navbar {
+    padding: 2rem;
+  }
+
+  .mkz__navbar-sign {
+    display: none;
+  }
+
+  .mkz__navbar-menu_container {
+    top: 20px;
+  }
+
+  .mkz__navbar-menu_container-links-sign {
+    display: block;
+  }
+}

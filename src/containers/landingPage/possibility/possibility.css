@@ -1,0 +1,126 @@
+.mkz__possibility {
+  display: flex;
+  flex-direction: row;
+}
+
+.mkz__possibility-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+
+  margin-right: 2rem;
+}
+
+.mkz__possibility-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.mkz__possibility-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  height: calc(100vh - 50px);
+  /* overflow-y: scroll;
+    position: sticky; */
+}
+
+/* ::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #81AFDD;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #042c54;
+} */
+
+.mkz__possibility-content h4 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  color: #71e5ff;
+}
+
+.mkz__possibility-content h4:last-child {
+  color: #ff8a71;
+}
+
+.feed {
+  color: #fff;
+}
+
+.mkz__possibility-content h1 {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 45px;
+  margin: 1rem 0;
+}
+
+.mkz__possibility-content p {
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 950px) {
+  .mkz__possibility {
+    flex-direction: column;
+  }
+
+  .mkz__possibility-image {
+    margin: 1rem 0;
+  }
+
+  .mkz__possibility-image img {
+    width: unset;
+    height: unset;
+  }
+
+  .mkz__possibility-content {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .mkz__possibility-image img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .mkz__possibility {
+    margin-top: -9rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .mkz__possibility-image {
+    width: 50%;
+    height: 50%;
+  }
+
+  .mkz__possibility-content h1 {
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .mkz__possibility-content h4 {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}

@@ -1,0 +1,59 @@
+.pricing {
+    background-color: #fff;
+    font-family: var(--font-family);
+}
+.mkz__price-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #054a84;
+    
+}
+
+.mkz__price-header h1 {
+    width: fit-content;
+    border-bottom: 4px solid #ebba16;
+    margin-bottom: 10px!important;
+    font-size: calc(22px + (30 - 20) * ((100vw - 300px) / (1920 - 300)));
+    letter-spacing: normal;
+    font-weight: 700!important;
+    margin-top: 0;
+    display: inline-block;
+    line-height: 1.4;
+    color: #054a84;
+}
+
+.mkz__price-header p {
+    line-height: 1.5;
+    color: #777;
+    text-align: center;
+    font-size: 24px;
+}
+.mkz__pricing-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; 
+}
+
+.mkz__how-work-wrapper {
+    margin-top: 50px;
+    padding: 20px;
+    display: block;
+    background: rgba(51,191,163,0.21);
+    border-style: none none none none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1px;
+    border-radius: 0px;
+    width: 100%;
+    height: 427px;
+    position: relative;
+}
+
+.mkz__how-work-wrapper h1 {
+    font-size: 36px;
+    color: rgb(20, 72, 98);
+    font-weight: 700;
+}

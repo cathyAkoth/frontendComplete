@@ -1,0 +1,43 @@
+.select-role {
+  background: #fff;
+}
+
+.role-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.employer {
+  background-color: #fdb719 !important;
+}
+
+.domestic {
+  background-color: #f26926 !important;
+}
+
+.agent {
+  background-color: #1e3888 !important;
+}
+
+/* @media screen and (max-width: 1280px) {
+  .select-role {
+    margin-left: 90px;
+  }
+} */
+
+@media screen and (max-width: 768px) {
+  .banner {
+    margin-top: -30px;
+  }
+  .banner-content h2 {
+    font-size: 14px !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* .role-cards {
+    display: flex !important;
+    flex-direction: column !important;
+  } */
+}

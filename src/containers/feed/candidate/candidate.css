@@ -1,0 +1,357 @@
+.mkz__candidate {
+    border-radius: 7px;
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    overflow: hidden;
+    
+    /* box-shadow: 0px 2px 5px 7px rgba(4,44,84,0.75);
+    -webkit-box-shadow: 0px 2px 5px 7px rgba(4,44,84,0.75);
+    -moz-box-shadow: 0px 2px 5px 7px rgba(4,44,84,0.75); */
+    
+    margin: 0 20px 5px 5px;
+    color: #333;
+    
+}
+
+.mkz__candidate-contents{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+
+    width: 100%;
+}
+
+.mkz__candidate-contents div {
+    width: 150px;
+    margin: 1rem;
+    /* border: 1px solid gray; */
+    margin:0;
+    flex:auto;
+    margin: 1rem 0.5rem;
+}
+/* trial */
+.mkz__candidate-box{
+    position: relative;
+    vertical-align: middle;
+    transition: all .5s ease;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #054a84;
+}
+
+.image-wrapper{
+    display: block;
+}
+
+.front-profile-img{
+    overflow: hidden;
+    height: 145px;
+    width: 145px;
+    margin: 15px 5px 15px 15px;
+    border-radius: 50%;
+    border: 1px solid #707070;
+}
+
+.mkz__candidateProfileImg{
+    vertical-align: middle;
+    border-style: none;
+}
+
+.label-wrapper{
+    display: block;
+    background: #042c54;  
+    
+    
+    clip-path: polygon(100% 0,90% 50%,100% 100%,0 100%,0 0,0 0);
+    border-bottom: 3px solid #FF8A71;
+    margin-top: 0.5rem!important;
+    
+}
+
+.profile-label{
+    /* z-index: 2; */
+    width: 88.053333%;
+    display: inline-block;
+    color: #fefefe;
+    font-weight: 500;
+    text-align: center;
+    cursor: default;
+    /* margin-bottom: 0.5rem; */
+}
+
+.mkz__candidate-detail{
+    width: 100%!important;
+    margin: 0 auto;
+    padding: 10px!important;
+    text-align: left!important;
+    height: 150px;
+    align-self: baseline!important;
+}
+
+.mkz__candidateUsername {
+    font-size: 1.5rem;
+    /* font-size: calc(18px + (15 - 12) * ((100vw - 300px) / (1920 - 300)))!important; */
+    font-weight: 600;
+    margin-right: 10px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #042c54;
+    margin-bottom: 0;
+    transition: all .5s ease;
+    letter-spacing: 1px;
+}
+
+.mkz__candidate-age {
+    font-size: 1.2rem;
+}
+.mkz__candidate-job{
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #434345;
+}
+
+.mkz__candidate-desc {
+    font-size: 1rem;
+    line-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0.5rem;
+    text-align: justify;
+    height: 75px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #333!important;
+    letter-spacing: normal;
+}
+
+.mkz__hr {
+    margin: 10px 0;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mkz__candidate-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    bottom: 0.5rem;
+    height: 30px;
+}
+
+.candidateOptions{
+    display: flex;
+    margin-left: 10px;    
+}
+
+.candidateOption{
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.candidateIcon{
+    font-size: 18px;
+    margin-right: 3px;
+}
+
+.candidateOptionText{
+    font-size: calc(14px + (15 - 12) * ((100vw - 300px) / (1920 - 300)))!important;
+    font-weight: 700;
+    color: #042c54;
+}
+
+.candidate-buttons{
+    display: flex;
+}
+.candidate-button{
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #042c54;
+    font-weight: 500;
+    margin-right: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.candidateBottomLeft {
+    display: flex;
+    align-items: center;
+}
+
+.likeIcon {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.candidateLikeCounter {
+    font-size: 15px;
+}
+
+.candidateCommentText {
+    cursor: pointer;
+    border-bottom: 1px dashed gray;
+    font-style: 15px;
+}
+
+
+.mkz__candidate-contents-left {
+    /* flex: 1; */
+    display: flex;
+    /* align-items: flex-start; */
+    flex-direction: column;
+    /* margin-right: 2rem;
+    margin-left: 20px; */
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+/* .mkz__candidateProfileImg {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    align-self: flex-start;
+} */
+
+/* .candidateButton{
+    align-self: flex-end;
+} */
+
+.mkz__candidateWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* trial start */
+.mkz__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--color-footer);
+}
+
+.mkz__footer-heading {
+    width: 100%;
+    text-align: center;
+
+    margin-bottom: 3rem;
+}
+
+.mkz__footer-heading h1 {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 75px;
+}
+
+.mkz__footer-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+    border: 1px solid #fff;
+    text-align: center;
+
+    margin-bottom: 10rem;
+    cursor: pointer;
+}
+
+
+
+
+/* .mkz__candidate-contents_div {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+} */
+
+
+
+.mkz__candidate-contents-center {
+    flex-grow: 4;
+}
+
+.mkz__candidate-contents-right {
+    flex-grow: 1;
+}
+
+.mkz__footer-links_div h4 {
+    font-size: 14px;
+    line-height: 17px;
+    font-family: var(--font-family);
+    color: #fff;
+
+    margin-bottom: 0.9rem;
+}
+
+.mkz__footer-links_div p {
+    font-size: 12px;
+    line-height: 15px;
+    font-family: var(--font-family);
+    color: #fff;
+
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+    .mkz__footer-heading h1 {
+        font-size: 44px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .mkz__footer-heading h1 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+
+    .mkz__footer-links div {
+        margin: 1rem 0;
+    }
+
+    .mkz__footer-btn p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .mkz__footer-heading h1 {
+        font-size: 27px;
+        line-height: 38px;
+    }
+}

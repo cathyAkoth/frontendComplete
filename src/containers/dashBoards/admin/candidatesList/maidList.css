@@ -1,0 +1,49 @@
+.maidList {
+  flex: 4;
+  background-color: #fff;
+}
+
+.candidate-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin: 0 20px;
+}
+
+.new-btn {
+  background-color: #031b34 !important;
+  color: #fff !important;
+}
+
+.new-btn:hover {
+  background-color: #174677 !important;
+}
+.maidListUser {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.maidListImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.maidListEdit {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #3bb077;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.maidListDelete {
+  color: red;
+  cursor: pointer;
+}

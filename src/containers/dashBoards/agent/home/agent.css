@@ -1,0 +1,48 @@
+.employer-dashboard {
+  background-color: #fff;
+}
+.breadcrumb {
+  background: #f8f8f8;
+  padding: 0 6rem;
+}
+
+.head {
+  padding: 1.5rem 0.5rem;
+  padding-top: 1.5em;
+}
+
+.breadcrumb-content {
+  padding: 0 1rem;
+}
+
+.breadcrumb-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.text-left {
+  text-align: left;
+  color: #434345;
+}
+
+.text-left ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.text-left ul li {
+  line-height: normal;
+  display: inline;
+  margin-right: 15px;
+  position: relative;
+}
+
+.text-left ul li a i {
+  margin-right: 15px;
+}
+
+.head-icon {
+  margin-right: 5px;
+  font-size: 20px !important;
+}

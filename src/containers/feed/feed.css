@@ -1,0 +1,37 @@
+/* .mkz__feed{
+    flex: 5.5;
+} */
+
+/* .feedWrapper {
+    padding: 20px;
+} */
+
+.mkz__feed {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--font-family);
+    background-color: #fff;
+    /* flex-wrap: wrap; */
+}
+
+.margin-t {
+    margin-top: 0.5rem!important;
+}
+
+/* .mkz__filter-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+.mkz__feed-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+} */
+
