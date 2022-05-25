@@ -12,6 +12,7 @@ import {
 import Banner from "components/banner";
 
 export default function CandidateDashboard() {
+  const formHandler = () => {};
   return (
     <div className="profile">
       <div className="profileTop">
@@ -62,7 +63,7 @@ export default function CandidateDashboard() {
           </div>
           <div className="infoUpdate">
             <span className="updateTitle">Edit Your Info</span>
-            <form className="updateForm">
+            <form className="updateForm" id="edit_form">
               <div className="updateLeft">
                 <div className="updateItem">
                   <label>First Name</label>
@@ -117,7 +118,13 @@ export default function CandidateDashboard() {
                   </label>
                   <input type="file" id="file" style={{ display: "none" }} />
                 </div>
-                <button className="updateButton">Update</button>
+                <button
+                  type="button"
+                  className="updateButton"
+                  onClick={formHandler}
+                >
+                  Update
+                </button>
               </div>
             </form>
           </div>

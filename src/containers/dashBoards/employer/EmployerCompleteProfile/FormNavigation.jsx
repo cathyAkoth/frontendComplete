@@ -1,11 +1,11 @@
 import { Button } from "@material-ui/core";
 
-interface Props {
-  hasPrevious?: Boolean;
-  onBackClick: (values: FormikValues) => void;
-}
+// interface Props {
+//   hasPrevious?: Boolean;
+//   onBackClick: (values: FormikValues) => void;
+// }
 
-const FormNavigation = (props: Props) => {
+const FormNavigation = (props) => {
   return (
     <div
       style={{

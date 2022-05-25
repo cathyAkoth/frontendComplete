@@ -13,6 +13,7 @@ import { Form, Formik } from "formik";
 import * as yup from "yup";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -69,6 +70,8 @@ const Register = () => {
     });
   };
 
+  const url = "http://localhost:5000/signup";
+
   return (
     <>
       {/* <div className="social-icons">
@@ -95,10 +98,17 @@ const Register = () => {
           password: "",
         }}
         onSubmit={(values) => {
-          alert(role);
+          axios
+            .post(url, values)
+            .then((res) => {
+              navigate("/dashboard/candidate", { replace: true });
+            })
+            .catch((error) => {
+              console.log("An error accured from: ", error);
+            });
           // console.log(JSON.stringify(values, null, 2));
-          localStorage.setItem("formValues", JSON.stringify(values));
-          navigate("/dashboard/candidate", { replace: true });
+          // localStorage.setItem("formValues", JSON.stringify(values));
+          // navigate("/dashboard/candidate", { replace: true });
         }}
         validationSchema={validationSchema}
       >
@@ -144,11 +154,7 @@ const Register = () => {
                   ),
                 }}
               />
-              <Button
-                className="custom-btn"
-                variant="contained"
-                type="submit" // endIcon={<SendIcon />}
-              >
+              <Button className="custom-btn" variant="contained" type="submit">
                 Sign Up
               </Button>
               <p className="text__small">

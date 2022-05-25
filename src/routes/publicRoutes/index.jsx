@@ -3,6 +3,7 @@ import { NotFound } from "components";
 import { LandingPage } from "containers";
 import RegisterRoutes from "routes/registerRoutes";
 
+//TODO first file
 export default function PublicRoutes() {
   return (
     <Routes>

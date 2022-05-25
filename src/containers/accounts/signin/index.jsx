@@ -19,6 +19,7 @@ import { Form, Formik } from "formik";
 import * as yup from "yup";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import ResetPassword from "../resetPassword";
+import axios from "axios";
 
 const MutedLink = styled.a`
   font-size: 12px;
@@ -73,6 +74,10 @@ const Signin = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const [loginError, setLoginError] = useState("");
+  //remote url
+  const url = "http://localhost:5000/login";
+
   return (
     <>
       {/* <div className="social-icons">
@@ -97,9 +102,18 @@ const Signin = () => {
       <Formik
         initialValues={{ email: "", password: "" }}
         onSubmit={(values) => {
-          console.log(JSON.stringify(values, null, 2));
-          localStorage.setItem("formValues", JSON.stringify(values));
-          navigate("/dashboard/candidate", { replace: true });
+          axios
+            .post(url, values)
+            .then((res) => {
+              navigate("/dashboard/candidate", { replace: true });
+            })
+            .catch((error) => {
+              setLoginError("Invalid Password or Email ");
+              console.log("An error accured from: ", error);
+            });
+          // console.log(JSON.stringify(values, null, 2));
+          // localStorage.setItem("formValues", JSON.stringify(values));
+          //
         }}
         validationSchema={validationSchema}
       >
@@ -109,6 +123,9 @@ const Signin = () => {
               <MutedLink>
                 Don't have an account? Click Register above!
               </MutedLink>
+              <div>
+                <br /> <p style={{ color: "red" }}>{loginError}</p>
+              </div>
               <TextField
                 variant="outlined"
                 id="email"

@@ -32,7 +32,7 @@ const roleCards = [
     title: "Agent",
     desc: "Become a partner and earn by helping domestic workers to register with Mukozi.",
     href: "/my-account/agent",
-  },
+  }
 ];
 
 const SelectRole = (props) => {
