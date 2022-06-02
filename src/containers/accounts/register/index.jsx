@@ -94,6 +94,9 @@ const Register = () => {
       </div> */}
       <Formik
         initialValues={{
+          firstName:"",
+          lastName:"",
+          phoneNo:"",
           email: "",
           password: "",
         }}
@@ -115,6 +118,26 @@ const Register = () => {
         {(formik) => (
           <Form onSubmit={formik.handleSubmit} className={classes.root}>
             <Grid container>
+            <TextField
+                variant="outlined"
+                id="firstName"
+                name="firstName"
+                label="First Name"
+                value={formik.values.firstName}
+                onChange={formik.handleChange}
+                error={formik.touched.firstName && Boolean(formik.errors.firstName)}
+                helperText={formik.touched.firstName && formik.errors.firstName}
+              />
+              <TextField
+                variant="outlined"
+                id="lastName"
+                name="lastName"
+                label="Last Name"
+                value={formik.values.lastName}
+                onChange={formik.handleChange}
+                error={formik.touched.lastName && Boolean(formik.errors.lastName)}
+                helperText={formik.touched.lastName && formik.errors.lastName}
+              />
               <TextField
                 variant="outlined"
                 id="email"
@@ -124,6 +147,16 @@ const Register = () => {
                 onChange={formik.handleChange}
                 error={formik.touched.email && Boolean(formik.errors.email)}
                 helperText={formik.touched.email && formik.errors.email}
+              />
+              <TextField
+                variant="outlined"
+                id="phoneNo"
+                name="phoneNo"
+                label="phoneNo"
+                value={formik.values.phoneNo}
+                onChange={formik.handleChange}
+                error={formik.touched.phoneNo && Boolean(formik.errors.phoneNo)}
+                helperText={formik.touched.phoneNo && formik.errors.phoneNo}
               />
               <TextField
                 variant="outlined"
