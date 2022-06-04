@@ -7,7 +7,6 @@ export const initialState = {
   user: [{ id: 0, first_name: "", last_name: "", email: "" }],
 };
 
-// Using thus approach incase it's typescript
 const userSlice = createSlice({
   name: "users",
   initialState,
@@ -33,5 +32,5 @@ const userSlice = createSlice({
 
 export const { addUser, startLoading, getUsersFailure, getUsersSuccess } =
   userSlice.actions;
-//export {addUser};
+
 export default userSlice.reducer;
