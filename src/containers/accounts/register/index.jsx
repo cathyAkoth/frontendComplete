@@ -94,13 +94,14 @@ const Register = () => {
       </div> */}
       <Formik
         initialValues={{
-          firstName:"",
-          lastName:"",
-          phoneNo:"",
+          firstName: "",
+          lastName: "",
+          phoneNo: "",
           email: "",
           password: "",
         }}
         onSubmit={(values) => {
+          console.log("CLICKED.....");
           axios
             .post(url, values)
             .then((res) => {
@@ -118,14 +119,16 @@ const Register = () => {
         {(formik) => (
           <Form onSubmit={formik.handleSubmit} className={classes.root}>
             <Grid container>
-            <TextField
+              <TextField
                 variant="outlined"
                 id="firstName"
                 name="firstName"
                 label="First Name"
                 value={formik.values.firstName}
                 onChange={formik.handleChange}
-                error={formik.touched.firstName && Boolean(formik.errors.firstName)}
+                error={
+                  formik.touched.firstName && Boolean(formik.errors.firstName)
+                }
                 helperText={formik.touched.firstName && formik.errors.firstName}
               />
               <TextField
@@ -135,7 +138,9 @@ const Register = () => {
                 label="Last Name"
                 value={formik.values.lastName}
                 onChange={formik.handleChange}
-                error={formik.touched.lastName && Boolean(formik.errors.lastName)}
+                error={
+                  formik.touched.lastName && Boolean(formik.errors.lastName)
+                }
                 helperText={formik.touched.lastName && formik.errors.lastName}
               />
               <TextField
@@ -164,6 +169,7 @@ const Register = () => {
                 name="password"
                 label="Password"
                 value={formik.values.password}
+                autoComplete="on"
                 onChange={formik.handleChange}
                 type={showPasswordValue.showPassword ? "text" : "password"}
                 error={
