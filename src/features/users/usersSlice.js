@@ -4,7 +4,8 @@ import { boolean } from "yup";
 export const initialState = {
   loading: false,
   hasErrors: boolean,
-  user: [{ id: 0, first_name: "", last_name: "", email: "" }],
+  user: [],
+  role: "",
 };
 
 const userSlice = createSlice({
@@ -13,6 +14,9 @@ const userSlice = createSlice({
   reducers: {
     addUser: (state, action) => {
       state.user.push(action.payload);
+    },
+    addRole: (state, action) => {
+      state.role = action.payload;
     },
     startLoading: (state) => {
       state.loading = true;
@@ -30,7 +34,12 @@ const userSlice = createSlice({
   },
 });
 
-export const { addUser, startLoading, getUsersFailure, getUsersSuccess } =
-  userSlice.actions;
+export const {
+  addUser,
+  startLoading,
+  getUsersFailure,
+  getUsersSuccess,
+  addRole,
+} = userSlice.actions;
 
 export default userSlice.reducer;

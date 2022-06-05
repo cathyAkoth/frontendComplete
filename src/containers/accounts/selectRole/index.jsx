@@ -4,6 +4,8 @@ import "./selectRole.css";
 import job from "assets/icon-job.png";
 import employer from "assets/icon-family.png";
 import agent from "assets/icon-agent.png";
+import { useDispatch } from "react-redux";
+import { addRole } from "features/users/usersSlice";
 
 const roleCards = [
   {
@@ -32,10 +34,11 @@ const roleCards = [
     title: "Agent",
     desc: "Become a partner and earn by helping domestic workers to register with Mukozi.",
     href: "/my-account/agent",
-  }
+  },
 ];
 
 const SelectRole = (props) => {
+  const dispatch = useDispatch();
   const { domestic, employer, agent } = props;
 
   return (
@@ -49,6 +52,7 @@ const SelectRole = (props) => {
       <div className="role-cards">
         {roleCards.map((card) => {
           const { role, cardIcon, className, title, desc, href } = card;
+          console.log("__________", role);
           return (
             <>
               <CustomCard
@@ -58,9 +62,7 @@ const SelectRole = (props) => {
                 className={className}
                 desc={desc}
                 link={href}
-                onClick={() => {
-                  console.log({ role });
-                }}
+                onClick={dispatch(addRole(role))}
               />
             </>
           );

@@ -14,6 +14,7 @@ import * as yup from "yup";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -71,27 +72,10 @@ const Register = () => {
   };
 
   const url = "http://localhost:5000/signup";
+  const user_role = useSelector((state) => state.user);
 
   return (
     <>
-      {/* <div className="social-icons">
-        <ul>
-          <li>
-            <a href="">
-              <i aria-hidden="true" className="fa fa-facebook content" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i
-                aria-hidden="true"
-                className="fa fa-google content"
-                style={{ backgroundColor: "#de5246" }}
-              />
-            </a>
-          </li>
-        </ul>
-      </div> */}
       <Formik
         initialValues={{
           firstName: "",
@@ -101,20 +85,17 @@ const Register = () => {
           password: "",
         }}
         onSubmit={(values) => {
-          console.log("CLICKED.....");
-          axios
-            .post(url, values)
-            .then((res) => {
-              navigate("/dashboard/candidate", { replace: true });
-            })
-            .catch((error) => {
-              console.log("An error accured from: ", error);
-            });
-          // console.log(JSON.stringify(values, null, 2));
-          // localStorage.setItem("formValues", JSON.stringify(values));
-          // navigate("/dashboard/candidate", { replace: true });
+          console.log("*******", user_role);
+          // axios
+          //   .post(url, values)
+          //   .then((res) => {
+          //     navigate("/my-account/candidate", { replace: true });
+          //   })
+          //   .catch((error) => {
+          //     console.log("An error accured from: ", error);
+          //   });
         }}
-        validationSchema={validationSchema}
+        //validationSchema={validationSchema}
       >
         {(formik) => (
           <Form onSubmit={formik.handleSubmit} className={classes.root}>
@@ -193,16 +174,23 @@ const Register = () => {
                   ),
                 }}
               />
-              <Button className="custom-btn" variant="contained" type="submit">
-                Sign Up
-              </Button>
-              <p className="text__small">
-                By creating an account, you agree to the{" "}
-                <Link to="/my-account/terms">Terms of Service</Link>. For more
-                information about Mukozi's privacy practices, see the Mukozi{" "}
-                <Link to="/my-account/privacy">Privacy Policy</Link>. We'll
-                occasionally send you account-related emails.
-              </p>
+
+              <div className="bottom">
+                <Button
+                  className="custom-btn"
+                  variant="contained"
+                  type="submit"
+                >
+                  Sign Up
+                </Button>
+                <p className="text__small">
+                  By creating an account, you agree to the{" "}
+                  <Link to="/my-account/terms">Terms of Service</Link>. For more
+                  information about Mukozi's privacy practices, see the Mukozi{" "}
+                  <Link to="/my-account/privacy">Privacy Policy</Link>. We'll
+                  occasionally send you account-related emails.
+                </p>
+              </div>
             </Grid>
           </Form>
         )}

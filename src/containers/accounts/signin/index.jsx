@@ -20,6 +20,8 @@ import * as yup from "yup";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import ResetPassword from "../resetPassword";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser } from "features/users/usersSlice";
 
 const MutedLink = styled.a`
   font-size: 12px;
@@ -55,6 +57,20 @@ const validationSchema = yup.object({
 });
 
 const Signin = () => {
+  //Redux Dispatch and Selector
+  const dispatch = useDispatch();
+  // dispatch(
+  //   addUser({
+  //     id: 1,
+  //     first_name: "Kenneth",
+  //     last_name: "Kisakye",
+  //     email: "kanyecope@gmail.com",
+  //   })
+  // );
+
+  //user being the store
+  const user = useSelector((state) => state.user);
+
   const navigate = useNavigate();
   const classes = useStyles();
 
@@ -111,9 +127,8 @@ const Signin = () => {
               setLoginError("Invalid Password or Email ");
               console.log("An error accured from: ", error);
             });
-          // console.log(JSON.stringify(values, null, 2));
-          // localStorage.setItem("formValues", JSON.stringify(values));
-          //
+          console.log(JSON.stringify(values, null, 2));
+          localStorage.setItem("formValues", JSON.stringify(values));
         }}
         validationSchema={validationSchema}
       >
