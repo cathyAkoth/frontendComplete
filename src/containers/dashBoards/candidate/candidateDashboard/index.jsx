@@ -78,7 +78,7 @@ export default function CandidateDashboard() {
                   <label>First Name</label>
                   <input
                     type="text"
-                    placeholder="Mike"
+                    value={user_details[0].firstName}
                     className="updateInput"
                   />
                 </div>
@@ -86,7 +86,7 @@ export default function CandidateDashboard() {
                   <label>Last Name</label>
                   <input
                     type="text"
-                    placeholder="Rembo"
+                    value={user_details[0].lastName}
                     className="updateInput"
                   />
                 </div>
@@ -94,7 +94,7 @@ export default function CandidateDashboard() {
                   <label>Email</label>
                   <input
                     type="text"
-                    placeholder="annabeck99@gmail.com"
+                    value={user_details[0].email}
                     className="updateInput"
                   />
                 </div>
@@ -102,7 +102,7 @@ export default function CandidateDashboard() {
                   <label>Phone</label>
                   <input
                     type="text"
-                    placeholder="+256 751 930841"
+                    value={user_details[0].phoneNo}
                     className="updateInput"
                   />
                 </div>
