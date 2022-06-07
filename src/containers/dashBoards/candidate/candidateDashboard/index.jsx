@@ -10,8 +10,17 @@ import {
   Publish,
 } from "@material-ui/icons";
 import Banner from "components/banner";
+import { useSelector } from "react-redux";
 
 export default function CandidateDashboard() {
+  //From the user in the store
+  const user = useSelector((state) => state.user);
+
+  //Get only user details
+  const user_details = user.user;
+
+  const username = user_details[0].firstName + " " + user_details[0].lastName;
+
   const formHandler = () => {};
   return (
     <div className="profile">
@@ -21,7 +30,7 @@ export default function CandidateDashboard() {
           <img src={profile} alt="" className="profileUserImg" />
         </div>
         <div className="profileHead">
-          <h4 className="profileName">Hello Mike Rembo</h4>
+          <h4 className="profileName">Hello {username}</h4>
         </div>
         <div className="pull-up section__padding">
           <Banner
@@ -41,7 +50,7 @@ export default function CandidateDashboard() {
             <span className="infoSubTitle">Account Details</span>
             <div className="infoDetail">
               <PermIdentity className="detailIcon" />
-              <span className="detail">Mike Rembo</span>
+              <span className="detail">{username}</span>
             </div>
             <div className="infoDetail">
               <CalendarToday className="detailIcon" />
@@ -50,11 +59,11 @@ export default function CandidateDashboard() {
             <span className="infoSubTitle">Contact Details</span>
             <div className="infoDetail">
               <PhoneAndroid className="detailIcon" />
-              <span className="detail">+256 751 930841</span>
+              <span className="detail">{user_details[0].phoneNo}</span>
             </div>
             <div className="infoDetail">
               <MailOutline className="detailIcon" />
-              <span className="detail">rembomike@gmail.com</span>
+              <span className="detail">{user_details[0].email}</span>
             </div>
             <div className="infoDetail">
               <LocationSearching className="detailIcon" />

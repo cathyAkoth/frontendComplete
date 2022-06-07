@@ -59,17 +59,6 @@ const validationSchema = yup.object({
 const Signin = () => {
   //Redux Dispatch and Selector
   const dispatch = useDispatch();
-  // dispatch(
-  //   addUser({
-  //     id: 1,
-  //     first_name: "Kenneth",
-  //     last_name: "Kisakye",
-  //     email: "kanyecope@gmail.com",
-  //   })
-  // );
-
-  //user being the store
-  const user = useSelector((state) => state.user);
 
   const navigate = useNavigate();
   const classes = useStyles();
@@ -96,31 +85,14 @@ const Signin = () => {
 
   return (
     <>
-      {/* <div className="social-icons">
-        <ul>
-          <li>
-            <a href="">
-              <i aria-hidden="true" className="fa fa-facebook content" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i
-                aria-hidden="true"
-                className="fa fa-google content"
-                style={{ backgroundColor: "#de5246" }}
-              />
-            </a>
-          </li>
-        </ul>
-      </div> */}
-
       <Formik
         initialValues={{ email: "", password: "" }}
         onSubmit={(values) => {
           axios
             .post(url, values)
             .then((res) => {
+              dispatch(addUser(res.data.data));
+
               navigate("/dashboard/candidate", { replace: true });
             })
             .catch((error) => {
