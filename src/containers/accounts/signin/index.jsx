@@ -20,7 +20,7 @@ import * as yup from "yup";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import ResetPassword from "../resetPassword";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addUser } from "features/users/usersSlice";
 
 const MutedLink = styled.a`

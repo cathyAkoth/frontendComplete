@@ -65,6 +65,15 @@ const Register = () => {
     showPassword: false,
   });
 
+  var user_role =
+    role === "/my-account/agent"
+      ? "agent"
+      : role === "/my-account/candidate"
+      ? "candidate"
+      : role === "/my-account/employer"
+      ? "employer"
+      : "";
+
   const handleClickShowPassword = () => {
     setShowPasswordValue({
       showPassword: !showPasswordValue.showPassword,
@@ -72,7 +81,6 @@ const Register = () => {
   };
 
   const url = "http://localhost:5000/signup";
-  const user_role = useSelector((state) => state.user);
 
   return (
     <>
@@ -83,12 +91,13 @@ const Register = () => {
           phoneNo: "",
           email: "",
           password: "",
+          role: user_role,
         }}
         onSubmit={(values) => {
           axios
             .post(url, values)
             .then((res) => {
-              navigate("/dashboard/candidate", { replace: true });
+              window.location.reload();
             })
             .catch((error) => {
               console.log("An error accured from: ", error);
