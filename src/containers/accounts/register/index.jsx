@@ -85,15 +85,14 @@ const Register = () => {
           password: "",
         }}
         onSubmit={(values) => {
-          console.log("*******", user_role);
-          // axios
-          //   .post(url, values)
-          //   .then((res) => {
-          //     navigate("/my-account/candidate", { replace: true });
-          //   })
-          //   .catch((error) => {
-          //     console.log("An error accured from: ", error);
-          //   });
+          axios
+            .post(url, values)
+            .then((res) => {
+              navigate("/dashboard/candidate", { replace: true });
+            })
+            .catch((error) => {
+              console.log("An error accured from: ", error);
+            });
         }}
         //validationSchema={validationSchema}
       >
